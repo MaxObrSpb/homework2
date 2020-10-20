@@ -1,5 +1,6 @@
 package ru.digitalhabbits.homework2;
 
+import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 import org.slf4j.Logger;
 
@@ -22,8 +23,9 @@ public class LineCounterProcessor
     @Override
     public Pair<String, Integer> process(@Nonnull String line) {
         randomSleep();
-        // TODO: NotImplemented: подсчет кол-ва символов в строке + произвольная задержка randomSleep()
-        return null;
+        System.setProperty("file.encoding", "UTF-8");
+        Pair<String, Integer> res = new ImmutablePair<>(line, line.length());
+        return res;
     }
 
     private void randomSleep() {
